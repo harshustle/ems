@@ -1,6 +1,8 @@
 import React from 'react'
 
-const TaskList = () => {
+const TaskList = ({data}) => {
+    console.log(JSON.stringify(data));
+
     return (
         <>
             {/* Task Cards */}
