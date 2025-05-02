@@ -13,6 +13,7 @@ const Login = ({handleLogin}) => {
         // Handle login logic here
         console.log('Login submitted');
         handleLogin(email, password);
+        
         // You can add your API call here to authenticate the user
         setEmail('');
         setPassword('');

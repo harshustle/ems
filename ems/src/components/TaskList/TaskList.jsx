@@ -1,39 +1,32 @@
-import React from 'react'
+import React from 'react';
+import AcceptTask from './AcceptTask';
+import NewTask from './NewTask';
+import FailedTask from './FailedTask';
+import CompleteTask from './CompleteTask';
 
-const TaskList = ({data}) => {
-    console.log(JSON.stringify(data));
+
+const TaskList = ({ data }) => {
+    console.log(JSON.stringify(data, null, 2));
+    
 
     return (
-        <>
-            {/* Task Cards */}
-            <div id='tasklist' className="space-y-4">
-                <div className="bg-red-500 p-4 rounded-lg shadow-md">
-                    <div className="flex justify-between items-center mb-2">
-                        <span className="bg-red-700 text-white px-2 py-1 rounded text-sm">High</span>
-                        <span className="text-sm">20 Feb 2024</span>
-                    </div>
-                    <h3 className="text-xl font-bold">Ek aur task</h3>
-                    <p className="text-sm">Task jaisa kabhi nahi dekha hoga waisa</p>
-                </div>
-                <div className="bg-green-500 p-4 rounded-lg shadow-md">
-                    <div className="flex justify-between items-center mb-2">
-                        <span className="bg-red-700 text-white px-2 py-1 rounded text-sm">High</span>
-                        <span className="text-sm">20 Feb 2024</span>
-                    </div>
-                    <h3 className="text-xl font-bold">Example task</h3>
-                    <p className="text-sm">Example Aisa kahi nahi dekha hoga jaisa</p>
-                </div>
-                <div className="bg-yellow-500 p-4 rounded-lg shadow-md">
-                    <div className="flex justify-between items-center mb-2">
-                        <span className="bg-red-700 text-white px-2 py-1 rounded text-sm">High</span>
-                        <span className="text-sm">8 Feb 2024</span>
-                    </div>
-                    <h3 className="text-xl font-bold">Another task</h3>
-                    <p className="text-sm">Task details go here...</p>
-                </div>
-            </div>
-        </>
-    )
-}
+        <div className='custom-scroll flex flex-col sm:flex-row items-center gap-5 lg:gap-10 overflow-x-auto max-w-full w-full h-auto p-5 bg-[#f3f4f6] rounded-xl'>
+        {data.tasks.map((task, index) => {
+            if(task.active) {
+                return <AcceptTask key={index} data={task} />;
+            }
+            if(task.newTask) {
+                return <NewTask key={index} data={task} />;
+            }
+            if(task.completed) {
+                return <CompleteTask key={index} data={task} />;
+            }
+            if(task.failed) {
+                return <FailedTask key={index} data={task} />;
+            }
+        })}
+        </div>
+    );
+};
 
-export default TaskList
+export default TaskList;

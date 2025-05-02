@@ -6,16 +6,18 @@ const employees = [
       password: "123",
       tasks: [
         {
+          id: 1,
           title: "Update client database",
           description: "Ensure all recent client info is updated in CRM.",
           date: "2025-04-22",
           category: "Data Entry",
-          active: true,
+          active: false,
           newTask: true,
           completed: false,
           failed: false
         },
         {
+          id: 2,
           title: "Review sales report",
           description: "Analyze Q1 sales and report findings.",
           date: "2025-04-20",
@@ -26,12 +28,24 @@ const employees = [
           failed: false
         },
         {
+          id: 3,
           title: "Team meeting",
           description: "Join the weekly team meeting on Zoom.",
           date: "2025-04-19",
           category: "Meetings",
           active: false,
           newTask: false,
+          completed: false,
+          failed: true
+        },
+        {
+          id: 4,
+          title: "Team call urgent",
+          description: "Join the call team meeting on Zoom.",
+          date: "2025-04-19",
+          category: "Meetings",
+          active: false,
+          newTask: true,
           completed: false,
           failed: true
         }

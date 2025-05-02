@@ -2,14 +2,13 @@ import React from 'react'
 
 const TaskNumbers = (props) => {
     const { data } = props;
-    console.log(JSON.stringify(data));
-    console.log(data.taskCount.active);
+    // console.log(data.taskCount.active);
     
     const newTaskCount = data.taskCount.newTask;
     const completedCount = data.taskCount.completed;
     const acceptedCount = data.taskCount.active;
     const failedCount = data.taskCount.failed;
-    console.log(newTaskCount, completedCount, acceptedCount, failedCount);
+    // console.log(newTaskCount, completedCount, acceptedCount, failedCount);
 
     return (
         <>

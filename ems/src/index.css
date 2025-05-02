@@ -3,3 +3,20 @@
 #tasklist::-webkit-scrollbar{
     display: none;
 }
+
+.custom-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
